@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HomePageActivity">
+
+
+
+
+<!--    //select no of players layout-->
+    <RelativeLayout
+        android:id="@+id/usersRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_layout"
+            android:layout_marginBottom="@dimen/_20ssp"
+            android:fontFamily="@font/courgette"
+            android:gravity="center_horizontal"
+            android:text="Select No. of Players"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_28ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/btn_layout"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/two_user_btn"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:background="@drawable/user_2"/>
+
+            <Button
+                android:id="@+id/one_user_btn"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:background="@drawable/user_1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+<!--    enter player name text view layout-->
+    <RelativeLayout
+        android:id="@+id/player_name_relative_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            enter player name text view-->
+            <TextView
+                android:id="@+id/enter_player_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20ssp"
+                android:fontFamily="@font/courgette"
+                android:gravity="center_horizontal"
+                android:text="Enter Players Name"
+                android:textColor="@color/purple_700"
+                android:textSize="@dimen/_28ssp"
+                android:textStyle="bold" />
+
+    <!--        first player layout-->
+            <LinearLayout
+                android:id="@+id/first_player_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/yellow"/>
+                <!--         enter first player name-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#C0C0C0"
+                        app:boxBackgroundColor="#00ff"
+                        app:errorEnabled="true"
+                        tools:ignore="MissingClass">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/first_player_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint=" First Player Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#000" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--        Second player layout-->
+            <LinearLayout
+                android:id="@+id/second_player_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/red"/>
+                <!--         enter second player name-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#C0C0C0"
+                        app:boxBackgroundColor="#00ff"
+                        app:errorEnabled="true"
+                        tools:ignore="MissingClass">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/second_player_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint=" Second Player Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#000" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+<!--        next button-->
+        <Button
+            android:id="@+id/next_to_game_layout_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:background="@drawable/next"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_40sdp"/>
+
+<!--        skip button-->
+        <Button
+            android:id="@+id/skip_to_game_layout_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:background="@drawable/skip"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_40sdp"/>
+    </RelativeLayout>
+
+
+
+
+
+<!--    game layout-->
+    <RelativeLayout
+         android:id="@+id/gameRelativeLayout"
+        android:visibility="gone"
+         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="368dp"
+        android:layout_height="368dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/board"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:onClick="dropIn"
+            android:tag="0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="17dp"
+            android:onClick="dropIn"
+            android:tag="1" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="12dp"
+            android:onClick="dropIn"
+            android:tag="2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="13dp"
+            android:onClick="dropIn"
+            android:tag="3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="13dp"
+            android:onClick="dropIn"
+            android:tag="4" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:onClick="dropIn"
+            android:tag="5" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="16dp"
+            android:onClick="dropIn"
+            android:tag="6" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="16dp"
+            android:onClick="dropIn"
+            android:tag="7" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:onClick="dropIn"
+            android:tag="8" />
+
+
+    </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/first_player_linear_game_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/yellow"/>
+            <!--         enter first player name-->
+            <TextView
+                android:id="@+id/first_player_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="first Player Name"
+                android:textColor="@color/purple_700"
+                android:fontFamily="@font/courgette"
+                android:textSize="@dimen/_15ssp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_player_linear_game_layout"
+            android:layout_below="@+id/first_player_linear_game_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/red"/>
+            <!--         enter second player name-->
+            <TextView
+                android:id="@+id/second_player_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Second Player Name"
+                android:textColor="@color/purple_700"
+                android:fontFamily="@font/courgette"
+                android:gravity="center"
+                android:textSize="@dimen/_15ssp"/>
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/winnerTextView"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:fontFamily="@font/courgette"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bouquet"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        android:textStyle="bold"
+       android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="181dp"
+        android:background="@drawable/reset"
+        android:onClick="reset"
+        android:text=""
+        android:textColor="@android:color/background_light"
+        android:visibility="visible"
+      android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/playagain"
+        android:onClick="playAgain"
+        android:text=""
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+       android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1146202650959603/5905615950">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>
